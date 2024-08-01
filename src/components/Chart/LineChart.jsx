@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Highcharts from 'highcharts/highstock'; 
 import HighchartsReact from 'highcharts-react-official';
-import priceData from '../assets/priceData.json';
-import moment from 'moment';
-import style from './styles.css';
-import { hover } from '@testing-library/user-event/dist/hover';
+import priceData from '../../assets/priceData.json';
+import TabsComponent from '../Tabs';
+import './styles.css'
 
 const LineChart = () => {
   const [currentPrice, setCurrentPrice] = useState(0);
   const [priceChange, setPriceChange] = useState({ value: 0, percentage: 0 });
+  const [activeTab, setActiveTab] = useState('Chart');
 
   useEffect(() => {
     if (priceData.length > 0) {
@@ -140,11 +140,19 @@ const LineChart = () => {
         <div className='title'>
           {numberFormat.format(currentPrice)}<sup style={{color: '#c1c2c3', fontSize: '20px', fontWeight: '400', marginLeft: '5px'}}>USD</sup>
         </div>
+        <div>
+
+        </div>
+
         <div style={{ color: priceChange.value >= 0 ? 'green' : 'red'}} className='price'>
           {priceChange.value >= 0 ? '+' : ''}
           {numberFormat.format(priceChange.value)} ({priceChange.percentage.toFixed(2)}%)
         </div>
       </div>
+
+      <div>
+  <TabsComponent setActiveTab={setActiveTab}/>
+</div>
       <HighchartsReact highcharts={Highcharts} constructorType={"stockChart"} options={configPrice} />
     </div>
   );

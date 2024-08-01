@@ -1,0 +1,34 @@
+/* styles.css */
+.tab-container {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .tabs {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+  }
+  
+  .tab-btn {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    border-radius: 4px 4px 0 0;
+  }
+  
+  .tab-btn.active {
+    border-bottom: 2px solid #007bff;
+    font-weight: bold;
+  }
+  
+  .tab-content {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 0 0 4px 4px;
+  }
+  
