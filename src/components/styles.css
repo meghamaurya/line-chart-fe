@@ -1,0 +1,33 @@
+.container{
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+    padding: 60px; 
+    background-color: '#fff';
+     border-radius: '8px';
+
+    .header{
+        display: flex; 
+        flex-direction: column;
+        align-items:start; 
+        margin-bottom: 20px;
+
+        .title{
+            font-size: 48px;
+            font-weight: bold;
+            margin-right: 10px;
+            color: #1a2a3a;
+            
+        }
+
+        .price{
+            font-size: 16px;
+        }
+    }
+
+}
+
+::ng-deep .highcharts-grid .highcharts-xaxis-grid{
+    border: 10px solid firebrick;
+}
+
