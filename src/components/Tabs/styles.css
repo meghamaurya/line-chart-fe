@@ -7,14 +7,14 @@
   
   .tabs {
     display: flex;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 0.5px solid #ddd;
     margin-bottom: 20px;
   }
   
   .tab-btn {
     background: none;
     border: none;
-    padding: 10px 20px;
+    padding: 20px;
     cursor: pointer;
     font-size: 16px;
     margin-right: 10px;
@@ -22,13 +22,35 @@
   }
   
   .tab-btn.active {
-    border-bottom: 2px solid #007bff;
+    border-bottom: 3px solid #4B40EE;
     font-weight: bold;
+    padding: 20px;
   }
   
   .tab-content {
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 0.5px solid #ddd;
     border-radius: 0 0 4px 4px;
   }
   
+
+  .links{
+    display: flex;
+   position: absolute;
+   top: 235px;
+   z-index: 10;
+    gap: 20px;
+    padding-left: 20px;
+  }
+
+  .full-screen{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .compare{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }

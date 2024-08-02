@@ -108,11 +108,31 @@ const LineChart = () => {
           text: 'max',
         },
       ],
-      selected: 2, 
-      inputEnabled: false, 
-      hover: {
-        background: '#4B40EE'
-      }
+      selected: 1, 
+      inputEnabled: false,
+       buttonPosition: {
+      align: 'right',
+      x: 0,
+    },
+    labelStyle: {
+      display: 'none', 
+    },
+    buttonTheme: {
+      states: {
+        hover: {
+          fill: '#4B40EE',
+          style: {
+            color: '#FFFFFF', 
+          },
+        },
+        select: {
+          fill: '#4B40EE', 
+          style: {
+            color: '#FFFFFF', 
+          },
+        },
+      },
+    },
     },
     navigator: {
       enabled: false, 
@@ -151,9 +171,14 @@ const LineChart = () => {
       </div>
 
       <div>
-  <TabsComponent setActiveTab={setActiveTab}/>
+  <TabsComponent activeTab={activeTab} setActiveTab={setActiveTab}/>
 </div>
-      <HighchartsReact highcharts={Highcharts} constructorType={"stockChart"} options={configPrice} />
+{activeTab === 'Summary' && <HighchartsReact highcharts={Highcharts} constructorType={"chart"} options={configPrice} />}
+{activeTab === 'Chart' && <HighchartsReact highcharts={Highcharts} constructorType={"stockChart"} options={configPrice} />}
+{activeTab === 'Statistics' && <HighchartsReact highcharts={Highcharts} constructorType={"chart"} options={configPrice} />}
+{activeTab === 'Analiysis' && <HighchartsReact highcharts={Highcharts} constructorType={"stockChart"} options={configPrice} />}
+{activeTab === 'Settings' && <HighchartsReact highcharts={Highcharts} constructorType={"stockChart"} options={configPrice} />}
+
     </div>
   );
 };
